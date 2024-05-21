@@ -62,7 +62,7 @@ header .container-grid {
 
 }
 
-nav.menu {
+.menu {
   width: 700px;
   display: flex;
   justify-content: space-between;
@@ -446,7 +446,7 @@ footer .container-grid {
 }
 
 .icones-redes {
-  width: 240px;
+  width: 500px;
 
   display: flex;
   justify-content: space-between;
@@ -459,6 +459,11 @@ footer .container-grid {
 .icones-redes a:hover {
   color: var(--laranja-gamifica);
 }
+
+.menu-fechado {
+  display: none;
+}
+
 
 @media screen and (max-width: 1300px) {
   header {
@@ -672,14 +677,15 @@ footer .container-grid {
   header img {
     width: 160px;
   }
+
   header svg {
     width: 40px;
   }
-  
+
   .conteudo-banner p {
     font-size: 20px;
   }
-  
+
   footer img {
     width: 200px;
   }
