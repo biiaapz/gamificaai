@@ -70,10 +70,10 @@ function mostrarProximoSlide() {
     //remover o slide anterior
     banner.classList.remove(slides[slideAtual])
 
-    if(slideAtual < 2) {
+    if (slideAtual < 2) {
         //somare variavel
         slideAtual++
-    } else{
+    } else {
         //voltar para o primeiro banner
         slideAtual = 0
     }
@@ -82,7 +82,7 @@ function mostrarProximoSlide() {
 
 }
 
- function mostrarSlideAnterior(){
+function mostrarSlideAnterior() {
     //remover o slide anterior
     banner.classList.remove(slides[slideAtual])
 
@@ -90,7 +90,7 @@ function mostrarProximoSlide() {
         slideAtual
         //subtarair 1 na variavel slideAtual
         slideAtual--
-    }else {
+    } else {
         //voltar para o ultimo slide
         slideAtual = 2
     }
@@ -99,17 +99,43 @@ function mostrarProximoSlide() {
     slideAtual--
     //mostara slide de acordo com slide atual
     banner.classList.add(slides[slideAtual])
- }
+}
 
 function selecionarSlide(indiceSlide) {
     //remove o slide atual
     banner.classList.remove(slides[slideAtual])
 
-//atualiza a variavel com o indice de slides selecionado
-slideAtual = indiceSlide
+    //atualiza a variavel com o indice de slides selecionado
+    slideAtual = indiceSlide
 
-// mostra o slides selecionado e salvo na varial slideAtual
-banner.classList.add(slides[slideAtual])
+    // mostra o slides selecionado e salvo na varial slideAtual
+    banner.classList.add(slides[slideAtual])
 
 
+}
+
+// carregamento diamico dos cases
+let listaCases = [
+   
+]
+
+function renderizarCases() {
+    //encontrar o elemento para inserir os cards
+    let containerCards = document.querySelector(".container-cards")
+
+    //variavel para guardar o html dos cases montados
+    let template = ""
+    //para cada case da listaCases
+    listaCases.forEach(cardCase => {
+        //mostrar o html do card, passando od atribuidos do case
+        template += `<div class="card">
+  <img src=${cardCase.imagem} alt="">
+  <p>${cardCase.descricao}</p>
+  <button>Ver mais</button>
+</div>`
+    })
+
+
+    // inserir html dos cases montados no elemento container-cards
+    containerCards.innerHTML = template
 }
